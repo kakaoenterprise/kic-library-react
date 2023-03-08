@@ -1,0 +1,16 @@
+body {
+    font-family: system-ui;
+    text-align:left;
+}
+
+.notfound {
+    width: 15%;
+}
+
+.notfound > img {
+    width: 100%;
+}
+
+.notfound > a {
+    font-size: 20px;
+}

@@ -1,0 +1,7 @@
+FROM openjdk:8u212-jdk-alpine
+
+COPY ./ ./
+RUN ./gradlew build
+
+EXPOSE 8080
+ENTRYPOINT ["java","-Xmx400M","-jar","/build/libs/library-react-SNAPSHOT.jar","--spring.profiles.active=local"]
