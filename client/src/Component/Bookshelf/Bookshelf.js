@@ -2,15 +2,16 @@ import './shelf.css'
 import { API, URL } from '../../config';
 import axios from 'axios';
 import { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const BookCard = (data) => {
     const book = data.data
     return (
         <article className="item"><div className="card">
             <div className="bookCover">
-                <a href={'/detail/' + book.bookId}>
+                <Link to={'/detail/' + book.bookId}>
                     <img alt="이미지" src={URL.CDN + book.imageUrl} width="100px" height="150px"/>
-                </a>
+                </Link>
             </div>
             <div className="bookDesc">
                 <div className="bookTitle">{book.name}</div><br/>

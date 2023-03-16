@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:8080"
+const BASE_URL = "https://ip-210-109-63-181.lb.kr-central-1.kakaokic.com"
 const OBJECT_STORAGE_URL = "https://objectstorage.kr-central-1.kakaoi.io/v1/9e8e800733b64edbb7cee30c61142df7/hands-on/kep-library"
 
 export const API = {
