@@ -12,10 +12,6 @@ export const App = () => {
       element={<MainPage />}
     />
     <Route
-      path='/index.html'
-      element={<MainPage />}
-    />
-    <Route
       path="/detail/:bookId"
       element={<DetailPage />}
     />
