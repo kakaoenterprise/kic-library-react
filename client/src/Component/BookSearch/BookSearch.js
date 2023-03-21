@@ -2,7 +2,7 @@ import './search.css'
 import { API } from '../../config';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 const BookItem = (book, key) => {
     book = book.book
@@ -10,7 +10,7 @@ const BookItem = (book, key) => {
         <tr>
             <td>{book.bookId}</td>
             <td>
-                <a href={'/detail/' + book.bookId}>{book.name}</a>
+                <Link to={'/detail/' + book.bookId}>{book.name}</Link>
             </td>
             <td>{book.company}</td>
             <td>{book.publishDate}</td>
