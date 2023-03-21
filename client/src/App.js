@@ -8,7 +8,7 @@ export const App = () => {
   return (
    <Routes>
     <Route
-      path='/'
+      path=''
       element={<MainPage />}
     />
     <Route
