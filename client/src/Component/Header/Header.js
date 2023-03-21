@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './header.css'
 
 let searchTypes = [
@@ -35,7 +35,7 @@ export const Header = () => {
     return (
         <header className="th">
             <div className="header">
-                <a href="/">kakaoenterprise 도서관</a>
+                <Link to='/'>kakaoenterprise 도서관</Link>
             </div>
             <nav>
                 <img alt="라이언" src={process.env.PUBLIC_URL + "/assets/ryan_img.png"}/>
