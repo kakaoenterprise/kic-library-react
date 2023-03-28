@@ -13,7 +13,24 @@ install_nginx()
 write_nginx_configuration()
 {
     cat << EOF | sudo tee /etc/nginx/sites-available/default
-    $(cat ./confs/nginx.conf)
+server {
+    listen 80 default_server;
+    access_log /var/log/nginx/access.log;
+    location / {
+        root   /usr/share/nginx/html;
+        index  index.html;
+        try_files \$uri \$uri/ /index.html;
+    }
+    location /api {
+        proxy_pass ${APP_ENDPOINT};
+        proxy_http_version 1.1;
+        proxy_redirect off;
+    }
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+        root   /usr/share/nginx/html;
+    }
+}
 EOF
     sudo service nginx reload
 }
